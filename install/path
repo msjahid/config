@@ -1,0 +1,5 @@
+xed .bashrc or gedit .bashrc or vim .bashrc
+# added by Anaconda3 installer
+Anaconda='/home/msjahid/anaconda3/'
+export Anaconda
+export PATH=$PATH:$Anaconda/bin

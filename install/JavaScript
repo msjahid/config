@@ -1,0 +1,9 @@
+sudo apt-get update 
+sudo apt-get install nodejs
+nodejs -v
+sudo apt install nodejs-legacy
+sudo su
+npm install -g browser-sync
+--------------------------------------------Atom Package--------------------------------
+Run code for----- script
+

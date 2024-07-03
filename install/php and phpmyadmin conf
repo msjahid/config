@@ -1,0 +1,221 @@
+1) sudo add-apt-repository ppa:ondrej/php
+ Co-installable PHP versions: PHP 5.6, PHP 7.x and most requested extensions are included. Only Supported Versions of PHP (http://php.net/supported-versions.php) for Supported Ubuntu Releases (https://wiki.ubuntu.com/Releases) are provided. Don't ask for end-of-life PHP versions or Ubuntu release, they won't be provided.
+
+Debian oldstable and stable packages are provided as well: https://deb.sury.org/#debian-dpa
+
+You can get more information about the packages at https://deb.sury.org
+
+BUGS&FEATURES: This PPA now has a issue tracker:
+https://deb.sury.org/#bug-reporting
+
+CAVEATS:
+1. If you are using php-gearman, you need to add ppa:ondrej/pkg-gearman
+2. If you are using apache2, you are advised to add ppa:ondrej/apache2
+3. If you are using nginx, you are advise to add ppa:ondrej/nginx-mainline
+   or ppa:ondrej/nginx
+
+PLEASE READ: If you like my work and want to give me a little motivation, please consider donating regularly: https://donate.sury.org/
+
+WARNING: add-apt-repository is broken with non-UTF-8 locales, see 
+https://github.com/oerdnj/deb.sury.org/issues/56 for workaround:
+
+# LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
+ More info: https://launchpad.net/~ondrej/+archive/ubuntu/php
+Press [ENTER] to continue or ctrl-c to cancel adding it
+
+gpg: keyring `/tmp/tmphy5b_lrv/secring.gpg' created
+gpg: keyring `/tmp/tmphy5b_lrv/pubring.gpg' created
+gpg: requesting key E5267A6C from hkp server keyserver.ubuntu.com
+gpg: /tmp/tmphy5b_lrv/trustdb.gpg: trustdb created
+gpg: key E5267A6C: public key "Launchpad PPA for Ondřej Surý" imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+OK
+
+
+2) sudo apt update
+
+Reading state information... Done
+22 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+
+3) sudo apt list --upgradable 
+
+
+
+4) sudo apt install php7.2 php7.2-common php7.2-cli php7.2-fpm
+
+
+
+5) sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql  --------------------------------check php version----------------------------
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  libapache2-mod-php7.2 libmcrypt4 php7.0-common php7.0-mcrypt php7.2-mysql
+Suggested packages:
+  php-pear libmcrypt-dev mcrypt
+The following NEW packages will be installed:
+  libapache2-mod-php libapache2-mod-php7.2 libmcrypt4 php php-mcrypt php-mysql php7.0-common php7.0-mcrypt php7.2-mysql
+0 upgraded, 9 newly installed, 0 to remove and 16 not upgraded.
+Need to get 2,424 kB of archives.
+After this operation, 10.3 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://bd.archive.ubuntu.com/ubuntu xenial/universe amd64 libmcrypt4 amd64 2.5.8-3.3 [63.0 kB]
+Get:2 http://ppa.launchpad.net/ondrej/php/ubuntu xenial/main amd64 libapache2-mod-php7.2 amd64 7.2.3-1+ubuntu16.04.1+deb.sury.org+1 [1,331 kB]
+Get:3 http://bd.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 php-mcrypt all 1:7.0+35ubuntu6.1 [1,934 B]
+Get:4 http://ppa.launchpad.net/ondrej/php/ubuntu xenial/main amd64 libapache2-mod-php all 1:7.2+60+ubuntu16.04.1+deb.sury.org+1 [5,826 B]            
+Get:5 http://ppa.launchpad.net/ondrej/php/ubuntu xenial/main amd64 php all 1:7.2+60+ubuntu16.04.1+deb.sury.org+1 [5,654 B]                           
+Get:6 http://ppa.launchpad.net/ondrej/php/ubuntu xenial/main amd64 php7.0-common amd64 7.0.28-1+ubuntu16.04.1+deb.sury.org+1 [880 kB]                
+Get:7 http://ppa.launchpad.net/ondrej/php/ubuntu xenial/main amd64 php7.0-mcrypt amd64 7.0.28-1+ubuntu16.04.1+deb.sury.org+1 [14.5 kB]               
+Get:8 http://ppa.launchpad.net/ondrej/php/ubuntu xenial/main amd64 php7.2-mysql amd64 7.2.3-1+ubuntu16.04.1+deb.sury.org+1 [117 kB]                  
+Get:9 http://ppa.launchpad.net/ondrej/php/ubuntu xenial/main amd64 php-mysql all 1:7.2+60+ubuntu16.04.1+deb.sury.org+1 [5,684 B]                     
+Fetched 2,424 kB in 25s (93.6 kB/s)                                                                                                                  
+Selecting previously unselected package libapache2-mod-php7.2.
+(Reading database ... 403412 files and directories currently installed.)
+Preparing to unpack .../libapache2-mod-php7.2_7.2.3-1+ubuntu16.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking libapache2-mod-php7.2 (7.2.3-1+ubuntu16.04.1+deb.sury.org+1) ...
+Selecting previously unselected package libapache2-mod-php.
+Preparing to unpack .../libapache2-mod-php_1%3a7.2+60+ubuntu16.04.1+deb.sury.org+1_all.deb ...
+Unpacking libapache2-mod-php (1:7.2+60+ubuntu16.04.1+deb.sury.org+1) ...
+Selecting previously unselected package libmcrypt4.
+Preparing to unpack .../libmcrypt4_2.5.8-3.3_amd64.deb ...
+Unpacking libmcrypt4 (2.5.8-3.3) ...
+Selecting previously unselected package php.
+Preparing to unpack .../php_1%3a7.2+60+ubuntu16.04.1+deb.sury.org+1_all.deb ...
+Unpacking php (1:7.2+60+ubuntu16.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php7.0-common.
+Preparing to unpack .../php7.0-common_7.0.28-1+ubuntu16.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.0-common (7.0.28-1+ubuntu16.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php7.0-mcrypt.
+Preparing to unpack .../php7.0-mcrypt_7.0.28-1+ubuntu16.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.0-mcrypt (7.0.28-1+ubuntu16.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php-mcrypt.
+Preparing to unpack .../php-mcrypt_1%3a7.0+35ubuntu6.1_all.deb ...
+Unpacking php-mcrypt (1:7.0+35ubuntu6.1) ...
+Selecting previously unselected package php7.2-mysql.
+Preparing to unpack .../php7.2-mysql_7.2.3-1+ubuntu16.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.2-mysql (7.2.3-1+ubuntu16.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php-mysql.
+Preparing to unpack .../php-mysql_1%3a7.2+60+ubuntu16.04.1+deb.sury.org+1_all.deb ...
+Unpacking php-mysql (1:7.2+60+ubuntu16.04.1+deb.sury.org+1) ...
+Processing triggers for php7.2-fpm (7.2.3-1+ubuntu16.04.1+deb.sury.org+1) ...
+NOTICE: Not enabling PHP 7.2 FPM by default.
+NOTICE: To enable PHP 7.2 FPM in Apache2 do:
+NOTICE: a2enmod proxy_fcgi setenvif
+NOTICE: a2enconf php7.2-fpm
+NOTICE: You are seeing this message because you have apache2 package installed.
+Setting up libapache2-mod-php7.2 (7.2.3-1+ubuntu16.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/7.2/apache2/php.ini with new version
+php_invoke: Enabled module phar for apache2 sapi
+php_invoke: Enabled module sockets for apache2 sapi
+php_invoke: Enabled module exif for apache2 sapi
+php_invoke: Enabled module fileinfo for apache2 sapi
+php_invoke: Enabled module calendar for apache2 sapi
+php_invoke: Enabled module pdo for apache2 sapi
+php_invoke: Enabled module readline for apache2 sapi
+php_invoke: Enabled module json for apache2 sapi
+php_invoke: Enabled module sysvshm for apache2 sapi
+php_invoke: Enabled module ftp for apache2 sapi
+php_invoke: Enabled module posix for apache2 sapi
+php_invoke: Enabled module sysvmsg for apache2 sapi
+php_invoke: Enabled module ctype for apache2 sapi
+php_invoke: Enabled module tokenizer for apache2 sapi
+php_invoke: Enabled module iconv for apache2 sapi
+php_invoke: Enabled module shmop for apache2 sapi
+php_invoke: Enabled module opcache for apache2 sapi
+php_invoke: Enabled module sysvsem for apache2 sapi
+php_invoke: Enabled module gettext for apache2 sapi
+Module mpm_event disabled.
+Enabling module mpm_prefork.
+apache2_switch_mpm Switch to prefork
+apache2_invoke: Enable module php7.2
+Setting up libapache2-mod-php (1:7.2+60+ubuntu16.04.1+deb.sury.org+1) ...
+Setting up libmcrypt4 (2.5.8-3.3) ...
+Setting up php (1:7.2+60+ubuntu16.04.1+deb.sury.org+1) ...
+Setting up php7.0-common (7.0.28-1+ubuntu16.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/7.0/mods-available/calendar.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/ctype.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/exif.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/fileinfo.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/ftp.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/gettext.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/iconv.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/pdo.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/phar.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/posix.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/shmop.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sockets.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvmsg.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvsem.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/sysvshm.ini with new version
+
+Creating config file /etc/php/7.0/mods-available/tokenizer.ini with new version
+Setting up php7.0-mcrypt (7.0.28-1+ubuntu16.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/7.0/mods-available/mcrypt.ini with new version
+Setting up php-mcrypt (1:7.0+35ubuntu6.1) ...
+Setting up php7.2-mysql (7.2.3-1+ubuntu16.04.1+deb.sury.org+1) ...
+
+Creating config file /etc/php/7.2/mods-available/mysqlnd.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/mysqli.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/pdo_mysql.ini with new version
+Setting up php-mysql (1:7.2+60+ubuntu16.04.1+deb.sury.org+1) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for libapache2-mod-php7.2 (7.2.3-1+ubuntu16.04.1+deb.sury.org+1) ...
+Processing triggers for php7.2-fpm (7.2.3-1+ubuntu16.04.1+deb.sury.org+1) ...
+NOTICE: Not enabling PHP 7.2 FPM by default.
+NOTICE: To enable PHP 7.2 FPM in Apache2 do:
+NOTICE: a2enmod proxy_fcgi setenvif
+NOTICE: a2enconf php7.2-fpm
+NOTICE: You are seeing this message because you have apache2 package installed.
+
+--------------------------------------------------------------------------------phpmyadmin install-----------------------------------------------
+phpstrom add php version xampp server
+opt/lamp/bin/php #only php not working then use php<version>
+
+
+
+PHPMYADMIN INSTALL::::::::::: 
+
+
+step 1: sudo apt-get install phpmyadmin
+
+
+
+step 2: sudo gedit /etc/apache2/apache2.conf
+
+# possible.
+ServerName localhost
+Include /etc/phpmyadmin/apache.conf
+
+
+
+step 3: sudo service apache2 restart
+Now go localhost/phpmyadmin
+
+if any Mcrypt extension is missing in 14.04 server for mysql
+then
+
+step 1: sudo php5enmod mcrypt
+
+step 2: sudo service apache2 restart
+

@@ -1,0 +1,61 @@
+// Sublime Text - Build System for Javascript
+{
+	"cmd": ["node", "$file"],
+	"selector": "source.js"
+}
+
+// Sublime Text - Build System for PHP
+{
+	"cmd": ["php", "$file"],
+	"selector": "source.php"
+}
+
+// Sublime Text - Build System for Python3
+{
+    "cmd": ["python3", "-i", "-u", "$file"],
+    "file_regex": "^[ ]File \"(...?)\", line ([0-9]*)",
+    "selector": "source.python"
+}
+
+// Sublime Text - Build System for Java
+{
+  "cmd": ["javac \"$file_name\" && java \"$file_base_name\""],
+  "shell": true,
+  "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+  "selector": "source.java"
+}
+
+// Sublime Text - Build System for C
+{
+"cmd" : ["gcc", "$file_name", "-o", "${file_base_name}", "-lm", "-Wall"],
+"selector" : "source.c",
+"shell": true,
+"working_dir" : "$file_path"
+}
+
+// Sublime Text - Build System for C++
+{
+    "cmd": ["g++ ${file} -o ${file_path}/${file_base_name} && echo 'Build Finished' && ${file_path}/${file_base_name}"],
+    "shell" : true
+}
+
+// Sublime Text - Build System for R
+{
+    "cmd": ["/usr/local/bin/Rscript", "$file"],
+    "selector": "source.r"
+}
+
+// Sublime Text - Build System for Mysql
+{
+    "cmd": [
+        "mysql",
+        "--login-path=mysql-login-path",
+        "-e",
+        "source $file",
+        "database_name",
+        "-t"
+    ],
+    "selector": "source.sql"
+}
+
+

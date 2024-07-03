@@ -1,0 +1,4 @@
+apm install hydrogen && apm install atom-django && npm install --save-dev atom-ide-base &&
+apm install atom-ide-datatip && apm install atom-ide-definitions && apm install script &&
+apm install platformio-ide-terminal && apm install linter-ui-default && apm install linter && 
+apm install kite && apm install atom-ide-base && apm install ide-python && apm install atom-ide-debugger && apm install atom-ide-console && apm install ide-html && apm install flask-snippets 

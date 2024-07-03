@@ -1,0 +1,44 @@
+cd Downloads/
+ls
+
+md5sum Anaconda3-5.1.0-Linux-x86_64.sh | grep 966406059cf7ed89cc82eb475ba506e5 (press 2 times)
+
+cd ..
+
+bash ~/Downloads/Anaconda3-5.1.0-Linux-x86_64.sh
+
+
+Close Terminal and reupon
+
+mkdir notebookproject
+
+cd notebookproject/
+
+jupyter notebook
+
+pip3 install spyder
+
+pip3 install --upgrade spyder
+
+Spyder
+
+sudo pip3 install -U spyder
+
+conda --v
+
+conda update conda
+
+conda create -n python36 python=3.6 anaconda
+
+pip3 install ipython
+
+conda update conda
+
+conda update ipython
+
+
+path pycharm and spyder = /home/msjahid/anaconda3/bin/python3.6
+
+
+
+

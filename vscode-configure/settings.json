@@ -1,0 +1,157 @@
+{
+    // editor
+    "editor.fontSize": 20,
+    "editor.fontFamily": "Fira Code, Operator Mono",
+    "editor.fontLigatures": true,
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": "comment",
+          "settings": {
+            "fontStyle": "italic"
+          }
+        }
+      ]
+    },
+    // cursor
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorBlinking": "expand",
+    // config related to code formatting
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "[javascript]": {
+      "editor.formatOnSave": false,
+      "editor.defaultFormatter": null
+    },
+    "[javascriptreact]": {
+      "editor.formatOnSave": false,
+      "editor.defaultFormatter": null
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll.tslint": true,
+      "source.organizeImports": true
+    },
+    "eslint.alwaysShowStatus": true,
+    "prettier.disableLanguages": ["javascript", "javascriptreact"],
+    //terminal
+    "terminal.integrated.fontSize": 20,
+    "terminal.integrated.fontWeight": "normal",
+    "terminal.integrated.fontFamily": "Fira Code, Operator Mono",
+    "workbench.iconTheme": "vscode-icons",
+    // terminal customization
+    "workbench.colorCustomizations": {
+      "terminal.background": "#292d3e",
+      "terminal.foreground": "#ffffff",
+      "terminalCursor.background": "#A89984",
+      "terminalCursor.foreground": "#A89984",
+      "terminal.ansiBlack": "#1D2021",
+      "terminal.ansiBlue": "#0D6678",
+      "terminal.ansiBrightBlack": "#665C54",
+      "terminal.ansiBrightBlue": "#0D6678",
+      "terminal.ansiBrightCyan": "#8BA59B",
+      "terminal.ansiBrightGreen": "#95C085",
+      "terminal.ansiBrightMagenta": "#8F4673",
+      "terminal.ansiBrightRed": "#FB543F",
+      "terminal.ansiBrightWhite": "#FDF4C1",
+      "terminal.ansiBrightYellow": "#FAC03B",
+      "terminal.ansiCyan": "#8BA59B",
+      "terminal.ansiGreen": "#95C085",
+      "terminal.ansiMagenta": "#8F4673",
+      "terminal.ansiRed": "#FB543F",
+      "terminal.ansiWhite": "#A89984",
+      "terminal.ansiYellow": "#FAC03B"
+    },
+    "auto-close-tag.activationOnLanguage": [
+  
+      "xml",
+      "php",
+      "blade",
+      "ejs",
+      "jinja",
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "plaintext",
+      "markdown",
+      "vue",
+      "liquid",
+      "erb",
+      "lang-cfml",
+      "cfml",
+      "HTML (EEx)",
+      "HTML (Eex)",
+      "plist"
+    ],
+    "workbench.editorAssociations": [
+      {
+        "viewType": "jupyter.notebook.ipynb",
+        "filenamePattern": "*.ipynb"
+      }
+    ],
+    "kite.showWelcomeNotificationOnStartup": false,
+    "window.zoomLevel": -2,
+    "python.pythonPath": "/usr/bin/python3",
+    "code-runner.executorMap": {
+    
+      "javascript": "node",
+      "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+      "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "php": "php",
+      "python": "python3 -u",
+      "perl": "perl",
+      "perl6": "perl6",
+      "ruby": "ruby",
+      "go": "go run",
+      "lua": "lua",
+      "groovy": "groovy",
+      "powershell": "powershell -ExecutionPolicy ByPass -File",
+      "bat": "cmd /c",
+      "shellscript": "bash",
+      "fsharp": "fsi",
+      "csharp": "scriptcs",
+      "vbscript": "cscript //Nologo",
+      "typescript": "ts-node",
+      "coffeescript": "coffee",
+      "scala": "scala",
+      "swift": "swift",
+      "julia": "julia",
+      "crystal": "crystal",
+      "ocaml": "ocaml",
+      "r": "Rscript",
+      "applescript": "osascript",
+      "clojure": "lein exec",
+      "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+      "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+      "racket": "racket",
+      "scheme": "csi -script",
+      "ahk": "autohotkey",
+      "autoit": "autoit3",
+      "dart": "dart",
+      "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+      "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+      "haskell": "runhaskell",
+      "nim": "nim compile --verbosity:0 --hints:off --run",
+      "lisp": "sbcl --script",
+      "kit": "kitc --run",
+      "v": "v run",
+      "sass": "sass --style expanded",
+      "scss": "scss --style expanded",
+      "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+      "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+    },
+    "vsicons.dontShowNewVersionMessage": true,
+    "python.defaultInterpreterPath": "python3",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Palenight Theme"
+  }
+  
