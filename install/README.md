@@ -1,3 +1,174 @@
+# Kali Linux Setup and Customization Guide
+
+This guide includes steps to resolve font issues, configure Guake for autostart, install fonts, and perform other customizations on Kali Linux.
+
+## 1. Fixing Language Font Issues
+
+To enable Bengali (Bangladesh) fonts, follow these steps:
+
+```bash
+sudo vim /etc/locale.gen
+```
+
+- Find the line with bn_BD UTF-8.
+- Uncomment it (remove the #).
+- Save and exit, then run the following command to generate locales:
+
+```bash
+sudo locale-gen
+```
+
+This will enable Bengali language support for your system.
+
+
+## 2. Autostart Guake Terminal
+To set Guake to autostart on login, create a symbolic link in the autostart directory:
+
+```bash
+sudo ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/
+```
+This ensures that Guake launches automatically when the system starts.
+
+## 3. Install Font Manager
+To install a font manager on Kali Linux, use:
+
+```bash
+sudo apt install font-manager -y
+```
+This allows you to manage your fonts easily. (Eg. Cascadia.ttf)
+
+## 4. Customize Guake Color Palette
+To change Guake's color palette:
+
+- Top color: #62A0EA
+- Bottom color: #2E3440
+
+These colors can be set via the Guake preferences under the "Appearance" section.
+
+## 5. Add Asterisks to Password View
+To enable password feedback (show asterisks as you type passwords):
+
+5.1: Open a new terminal window (Ctrl + Alt + T) and enter:
+
+```bash
+sudo visudo
+```
+
+5.2: Use the keyboard or mouse to scroll to the line that reads:
+
+```bash
+Defaults env_reset
+```
+
+5.3: Move the cursor to the end of the line and add:
+
+```bash
+Defaults env_reset,pwfeedback
+```
+
+5.4: Save the changes by pressing `Ctrl + X`, then `Y`, followed by `Enter`.
+
+## 6. Enable Bluetooth on Boot
+To ensure Bluetooth starts automatically on boot:
+
+```bash
+sudo systemctl enable bluetooth.service
+```
+
+This command enables the Bluetooth service to start on boot, allowing you to use Bluetooth devices without manually starting the service.
+
+## 7. Install and Use Asciinema for Terminal Recording
+To install Asciinema for terminal recording:
+
+```bash
+sudo apt install asciinema
+```
+
+To authenticate with Asciinema:
+
+```bash
+asciinema auth
+```
+
+Record your terminal session:
+
+```bash
+asciinema rec demo.cast
+```
+
+Replay the recording:
+
+```bash
+asciinema play demo.cast
+```
+
+Upload the recording to Asciinema.org:
+
+```bash
+asciinema upload demo.cast
+```
+
+## 8. Convert Asciinema Recordings to GIF
+To convert your Asciinema recordings into a GIF, follow these steps:
+
+8.1: Install Cargo (Rust package manager):
+
+```bash
+sudo apt-get install cargo
+```
+
+8.2: Install `agg` to convert recordings into GIF format:
+
+```bash
+cargo install --git https://github.com/asciinema/agg
+```
+
+8.3: Add the Cargo bin directory to your `PATH` by editing `~/.bashrc` (or `~/.zshrc` for Zsh users):
+
+```bash
+export PATH="$HOME/.cargo/bin:$PATH"
+```
+
+8.4: Source the file to apply changes:
+
+```bash
+source ~/.bashrc  # or source ~/.zshrc for Zsh users
+```
+
+You can now use `agg to` convert your `.cast` files to `.gif` format for easy sharing.
+
+```bash
+agg https://asciinema.org/a/597290 test.gif
+```
+
+## 9. Docker Setup for First-Time Use
+For first-time Docker use:
+
+```bash
+docker-compose build
+```
+
+If you encounter any errors, clear previous caches:
+
+```bash
+docker-compose down --volumes --rmi all
+```
+
+Rebuild the image to resolve any inconsistencies:
+
+```bash
+docker-compose build --no-cache
+```
+
+Then, bring up the containers:
+
+```bash
+docker-compose up
+```
+
+This will start the services defined in your `docker-compose.yml` file.
+
+
 # Linux Software Install Commands
 ```bash
 sudo apt-get update
