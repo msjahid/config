@@ -168,6 +168,115 @@ docker-compose up
 
 This will start the services defined in your `docker-compose.yml` file.
 
+# Docker Troubleshooting Guide
+
+This guide helps you resolve issues with Docker and Docker Compose, especially related to Docker daemon, permissions, and port conflicts.
+
+## 1. Check Docker Daemon Status
+
+Ensure Docker is running on your system. You can do this by checking the Docker service status:
+
+```bash
+sudo systemctl status docker
+```
+
+If it's not running, start the Docker service:
+
+```bash
+sudo systemctl start docker
+```
+
+
+## 2. Enable Docker to Start on Boot
+If Docker is not set to start on boot, you can enable it:
+
+```bash
+sudo systemctl enable docker
+```
+
+This will ensure Docker starts automatically when the system boots up.
+
+## 3. Verify Docker Socket Permissions
+
+The issue may be caused by insufficient permissions to access the Docker socket. To check the permissions:
+
+```bash
+ls -l /var/run/docker.sock
+```
+
+Make sure the user has permission to access the socket. If not, add your user to the Docker group:
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+After running this command, log out and log back in to refresh the group membership, or restart the system.
+
+## 4. Restart Docker Daemon
+
+Sometimes restarting the Docker daemon can resolve issues:
+
+```bash
+sudo systemctl restart docker
+```
+
+## 5. Check Docker Configuration
+
+### List Running Containers
+
+To view only the containers currently running:
+
+```bash
+sudo docker ps
+```
+
+### List All Containers (Running and Stopped)
+
+To see all containers, including stopped ones:
+
+```bash
+sudo docker ps -a
+```
+
+If you want you can Stop the Specific Container: If you know which container might be using port '(eg. PORT-4000 & CONTAINER-1746fbc94449)', stop it using:
+
+```bash
+sudo docker stop 1746fbc94449
+```
+
+### Inspect Specific Container Details
+
+To get more detailed information about a specific container, use:
+
+```bash
+docker inspect 1746fbc94449
+```
+
+## 6. Fix Port Conflicts
+
+If you get an error like:
+
+> [!CAUTION]
+> driver failed programming external connectivity on endpoint loan-approval-app (0e6303b4f4b0294f1ebe7f4311b2b243d945ff4fd425138892d318130c491178): failed to bind port 0.0.0.0:4000/tcp: Error starting userland proxy: listen tcp4 0.0.0.0:4000: bind: address already in use
+
+Run the following to identify the process using port 4000:
+
+```bash
+sudo lsof -i :4000
+```
+
+Then kill the process by running: `(eg. PID-53348)'
+
+```bash
+kill -9 <PID>
+```
+
+Where `<PID>` is the process ID you found from the previous command.
+
+## Conclusion
+
+These steps should help you troubleshoot and resolve common Docker issues related to the Docker daemon, permissions, and port conflicts.
+
 
 # Linux Software Install Commands
 ```bash
