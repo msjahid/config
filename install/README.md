@@ -41,6 +41,59 @@ source ~/.zshrc
 # You now have Zsh + Oh My Zsh + syntax highlighting + autosuggestions!
 ```
 
+```bash
+# ---------------------------------------
+# 🧑‍💻 Step 1: Set Your Git Username & Email
+# ---------------------------------------
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+
+# ---------------------------------------
+# ✅ Verify Your Git Config
+# ---------------------------------------
+git config --global user.name
+git config --global user.email
+
+# ---------------------------------------
+# 🔐 Step 2: Generate SSH Key for GitHub
+# ---------------------------------------
+# Open your terminal and run the following:
+ssh-keygen -o
+
+# Press Enter for all prompts (to use the default settings).
+# This will generate a key pair at:
+# /home/your-username/.ssh/id_ed25519.pub
+
+# ---------------------------------------
+# View Your Public SSH Key
+# ---------------------------------------
+# To view your public key, run:
+cat /home/your-username/.ssh/id_ed25519.pub
+
+# Copy the entire output (starting with "ssh-ed25519").
+
+# ---------------------------------------
+# 🔑 Step 3: Add SSH Key to GitHub
+# ---------------------------------------
+# Go to GitHub SSH Key Settings:
+# https://github.com/settings/keys
+
+# 1. Click "New SSH key" or "Add SSH key"
+# 2. Title: Give it a descriptive name (e.g., My Ubuntu Laptop)
+# 3. Key: Paste your copied SSH key here
+# 4. Click "Add SSH key"
+
+# ---------------------------------------
+# 🎉 You're Done!
+# ---------------------------------------
+# You’ve successfully:
+# - Set your Git user credentials
+# - Generated a secure SSH key
+# - Connected your local machine to GitHub via SSH
+
+# Now you can use `git` with GitHub securely — no passwords required on every push! 🚀
+```
+
 
 ## 1. Fixing Language Font Issues
 
