@@ -2,6 +2,46 @@
 
 This guide includes steps to resolve font issues, configure Guake for autostart, install fonts, and perform other customizations on Kali Linux.
 
+
+```bash
+# ---------------------------------------
+# 📦 Step 1: Install Zsh
+# ---------------------------------------
+sudo apt update
+sudo apt install zsh -y
+
+# ---------------------------------------
+# 🚀 Step 2: Install Oh My Zsh
+# ---------------------------------------
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Reference: https://ohmyz.sh/#install
+
+# ---------------------------------------
+# ⚙️ Step 3: Replace .zshrc with custom config
+# ---------------------------------------
+cd ~
+# Backup existing .zshrc just in case
+cp .zshrc .zshrc.backup
+
+# Open the link and replace .zshrc which is avliable your home direcorty with the custom config from Gist
+https://gist.githubusercontent.com/noahbliss/4fec4f5fa2d2a2bc857cccc5d00b19b6/raw/.zshrc
+
+# ---------------------------------------
+# ✨ Step 4: Install Plugins
+# ---------------------------------------
+sudo apt install zsh-syntax-highlighting -y
+sudo apt install zsh-autosuggestions -y
+
+# ---------------------------------------
+# 🔄 Step 5: Reload Zsh config
+# ---------------------------------------
+source ~/.zshrc
+
+# 🎉 Done! Restart
+# You now have Zsh + Oh My Zsh + syntax highlighting + autosuggestions!
+```
+
+
 ## 1. Fixing Language Font Issues
 
 To enable Bengali (Bangladesh) fonts, follow these steps:
